@@ -15,6 +15,7 @@ Turn this :
   end
 
 Info this :
+  #outside of a rails app you will need to require 'chain-boy'
 
   def self.search(params)
     products = DynamicDelegator.new(Product.scoped)
