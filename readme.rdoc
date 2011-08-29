@@ -1,0 +1,26 @@
+=== Install the gem
+  gem install chain-boy
+=== Rails Gemfile
+  gem 'chain-boy'
+
+===So what does it do?
+
+Turn this :
+  def self.search(params)
+    products = Product.scoped
+    products = products.where("name like ?", "%" + params[:name] + "%") if params[:name]
+    products = products.where("price >= ?", params[:price_gt]) if params[:price_gt]
+    products = products.where("price <= ?", params[:price_lt]) if params[:price_lt]
+    products
+  end
+
+Info this :
+
+  def self.search(params)
+    products = DynamicDelegator.new(Product.scoped)
+    products.where("name like ?", "%" + params[:name] + "%") if params[:name]
+    products.where("price >= ?", params[:price_gt]) if params[:price_gt]
+    products.where("price <= ?", params[:price_lt]) if params[:price_lt]
+    products
+  end
+
