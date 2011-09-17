@@ -1,5 +1,6 @@
 === Install the gem
   gem install chain-boy
+
 === Rails Gemfile
   gem 'chain-boy'
 
