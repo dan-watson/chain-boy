@@ -4,7 +4,6 @@ $LOAD_PATH.unshift libdir unless $LOAD_PATH.include?(libdir)
 require 'test/unit'
 require 'chain-boy'
 
-
 class DynamicDelegatorTests < Test::Unit::TestCase
   def test_delegate_method_call
     adder = DynamicDelegator.new(Adder.new(1))
