@@ -12,6 +12,10 @@ class DynamicDelegatorTests < Test::Unit::TestCase
     assert_equal 3, adder.number
   end
 
+  def test_fail
+    assert_equal 0, 1
+  end
+
   private
   class Adder
     def initialize(number)
