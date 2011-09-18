@@ -7,3 +7,6 @@ namespace :ganymede do
     exec("ruby #{Dir.pwd}/test/dynamic_delegator_tests.rb")
   end
 end
+
+task :default => "ganymede:build"
+  
